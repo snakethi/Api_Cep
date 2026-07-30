@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.29">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,9 +17,15 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.29" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="8.10.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.29" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiCep.Application\ApiCep.Application.csproj" />
     <ProjectReference Include="..\ApiCep.Domain\ApiCep.Domain.csproj" />
   </ItemGroup>
 

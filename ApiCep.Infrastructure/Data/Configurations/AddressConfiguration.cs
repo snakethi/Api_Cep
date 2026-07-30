@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ApiCep.Infrastructure.Configurations
+namespace ApiCep.Infrastructure.Data.Configurations
 {
     public sealed class AddressConfiguration
     {

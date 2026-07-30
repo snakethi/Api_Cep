@@ -1,10 +1,8 @@
-﻿
-
-using ApiCep.Domain.Entities;
+﻿using ApiCep.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ApiCep.Infrastructure.Configurations
+namespace ApiCep.Infrastructure.Data.Configurations
 {
     public sealed class UserConfiguration : IEntityTypeConfiguration<User>
     {
