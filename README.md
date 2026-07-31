@@ -306,6 +306,15 @@ GET /health/ready
 - `live`: informa se o processo da API está em execução
 - `ready`: verifica SQL Server e ViaCEP
 
+Os Health Checks são endpoints operacionais mapeados diretamente na aplicação e não aparecem no Swagger. Para testá-los, acesse as URLs diretamente pelo navegador, Postman ou outra ferramenta HTTP:
+
+```text
+https://localhost:7061/health/live
+https://localhost:7061/health/ready
+```
+
+Substitua `7061` pela porta HTTPS exibida no terminal ao iniciar a API, caso seja diferente.
+
 Os Health Checks não são versionados porque representam endpoints operacionais, e não contratos de negócio.
 
 ### Registros explícitos de dependência
@@ -406,7 +415,19 @@ dotnet build .\ApiCep\ApiCep.sln
 
 ### 5. Criar ou atualizar o banco
 
-A migration inicial já está incluída no repositório.
+A migration inicial já está incluída no repositório. Para aplicá-la pelo Visual Studio:
+
+1. Abra a solução `ApiCep/ApiCep.sln`.
+2. Defina `ApiCep.Api` como projeto de inicialização.
+3. Acesse **Ferramentas → Gerenciador de Pacotes do NuGet → Console do Gerenciador de Pacotes**.
+4. No campo **Projeto padrão**, selecione `ApiCep.Infrastructure`.
+5. Execute:
+
+```powershell
+Update-Database
+```
+
+Como alternativa, pela linha de comando na raiz do repositório:
 
 ```powershell
 dotnet ef database update --project .\ApiCep.Infrastructure\ApiCep.Infrastructure.csproj --startup-project .\ApiCep\ApiCep.Api.csproj
